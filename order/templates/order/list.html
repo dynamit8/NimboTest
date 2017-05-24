@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>{% block title %}Order{% endblock %}</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="{% static "assets/css/global.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "assets/css/custom.css" %}">
+	</head>
+	<body class="container">
+		<nav class="hidden-xs">
+			{% block nav %}
+			<ul class="flexBox">
+				<li class="itemGrow1"><a href="index.html"><img src="{% static "assets/icons/logo-white.svg" %}" alt="Nimbo"></a></li>
+				<li class="itemGrow1"><a href="index.html"><span>Dashboard</a></li>
+				<li class="itemGrow1 active"><a href="index.html">Orders</a></li>
+				<li class="itemGrow1 subMenu companies"><a href="index.html">Companies</a></li>
+				<li class="itemGrow1"><a href="index.html">Products</a></li>
+				<li class="itemGrow1"><a href="index.html">Documents</a></li>
+				<li class="itemGrow1"><a href="index.html">Pricing</a></li>
+				<li class="itemGrow1"><a href="index.html">Brands</a></li>
+				<li class="itemGrow1 subMenu settings"><a href="index.html">Settings</a></li>
+				<li class="itemGrow1"><a href="index.html">Reports</a></li>
+				<li class="itemGrow1"><a href="index.html">Account Users</a></li>
+				<li class="itemGrow3"><a href="index.html"><img src="{% static "assets/icons/logo-white.svg" %}" alt="Nimbo"></a></li>
+	        </ul>
+	        {% endblock %}
+		</nav>
+		<main>
+			<nav class="mini hidden-sm hidden-md hidden-lg text-center">
+				<div class="back itemGrow1"></div>
+				<div class="content itemGrow8">001</div>
+				<div class="search itemGrow1"></div>
+			</nav>
+			<section id="breadcrumb" class="hidden-xs">
+				{% block breadcrumb %}
+				<h1>
+					<ol class="breadcrumb">
+					  <li><a href="#">Order</a></li>
+					  <li><a href="#" class="current heading">001</a></li>
+					</ol>
+				</h1>
+				{% endblock %}
+			</section>
+			<section id="customerContact" class="row">
+				<div class="col-md-9 panel panel-default padding-10">
+					<div class="row">
+						<div class="col-md-6 address">
+							<h2 class="label"><strong>{{address.building}}</strong></h2>
+							<p>{{address.detail}}</p>
+							<p class="hidden-xs">{{address.tel}}</p>
+						</div>
+						<div class="col-md-6 contactDetails text-center padding-top-10">
+							<div class="row">
+								<div class="col-md-4 box">
+									<div class="label">Type</div>
+									<div class="dropdown">
+										<button class="btn btn-default dropdown-toggle" type="button" id="customerContactType" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											<span class="pull-left">{{customerContact.type}}</span>
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu" aria-labelledby="customerContactType">
+											<li><a href="#">{{customerContact.type}}</a></li>
+											<li><a href="#">Wholesales</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-md-4 box">
+									<div class="label">Owned by</div>
+									<div class="dropdown">
+										<button class="btn btn-default dropdown-toggle" type="button" id="customerContactName" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											<span class="pull-left">{{customerContact.name}}</span>
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu" aria-labelledby="customerContactName">
+											<li><a href="#">{{customerContact.name}}</a></li>
+											<li><a href="#">Jerry</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-md-4 box">
+									<div class="label">Status</div>
+									<div class="dropdown">
+										<button class="btn btn-default dropdown-toggle" type="button" id="customerContactStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											<span class="pull-left">{{customerContact.status}}</span>
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu" aria-labelledby="customerContactStatus">
+											<li><a href="#">{{customerContact.status}}</a></li>
+											<li><a href="#">Done</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 actions">
+					<a href="#" class="label item hidden-xs"><strong>Back</strong></a>
+					<button class="btn btn-primary item disabled">Update Order</button>
+				</div>
+			</section>
+			<section id="addProductBySku">
+				<span class="icon"></span>
+				<input type="text" name="searchBySku" id="searchBySku" class="form-control input-lg" value="Add Products">
+				<div class="overlayScreen"></div>
+			</section>
+			<section id="productDetails" class="panel panel-default">
+				<div class="head flexBox">
+					<div class="sku col-md-1 label item itemGrow3">sku</div>
+					<div class="description label item itemGrow4">description</div>
+					<div class="brand1 label item itemGrow5 ">brand</div>
+					<div class="price label item itemGrow2">list price</div>
+					<div class="discount label item itemGrow2">discount</div>
+					<div class="netPrice label item itemGrow2">net price</div>
+					<div class="qty label item itemGrow1">qty</div>
+					<div class="total label item itemGrow3">total</div>
+					<div class="remove label item itemGrow3">remove</div>
+				</div>
+				<div class="content flexBox">
+					<div class="sku item itemGrow3">{{product1.sku}}</div>
+					<div class="description item itemGrow4">{{product1.description}}</div>
+					<div class="brand item itemGrow5">{{product1.brand}}</div>
+					<div class="price item itemGrow2">{{product1.price}}</div>
+					<div class="discount item itemGrow2">{{product1.discount}}</div>
+					<div class="netPrice item itemGrow2">{{product1.netPrice}}</div>
+					<div class="qty item itemGrow1">{{product1.qty}}<img src="{% static "assets/icons/icon_edit.svg" %}" alt="edit"></div>
+					<div class="total item itemGrow3">{{product1.total}}</div>
+					<div class="remove item itemGrow3">Remove Item</div>
+				</div>
+				<div class="content flexBox">
+					<div class="sku item itemGrow3">{{product2.sku}}</div>
+					<div class="description item itemGrow4">{{product2.description}}</div>
+					<div class="brand item itemGrow3">{{product2.brand}}</div>
+					<div class="price item itemGrow2">{{product2.price}}</div>
+					<div class="discount item itemGrow2">{{product2.discount}}</div>
+					<div class="netPrice item itemGrow2">{{product2.netPrice}}</div>
+					<div class="qty item itemGrow1">{{product2.qty}}<img src="{% static "assets/icons/icon_edit.svg" %}" alt="edit"></div>
+					<div class="total item itemGrow3">{{product2.total}}</div>
+					<div class="remove item itemGrow3">Remove Item</div>
+				</div>
+			</section>
+			<section id="remark">
+				<h2 class="label">Remark</h2>
+				<div class="panel panel-default padding-10">
+					<p>When you enter into any new area of science, you almost always find yourself with a baffling new language of technical terms to learn before you can converse with the experts. This is certainly true in astronomy both in terms of terms that refer to the cosmos and terms that describe the tools of the trade, the most prevalent being the telescope. So to get us off of first base, let’s define some of the key terms that pertain to telescopes to help you be able to talk to them more intelligently. </p>
+				</div>
+			</section>
+			<section id="shippingDetails">
+				<div class="row">
+					<div class="col-md-7">
+						<label for="estimatedDeliveryDate" class="label">Estimated Delivery Date</label>
+					</div>
+					<div class="col-md-5">
+						<input id="estimatedDeliveryDate" name="estimatedDeliveryDate" type="text" class="form-control input-sm" placeholder="14-10-2016">
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-7">
+						<label for="subTotal" class="label">Sub-total</label>
+					</div>
+					<div class="col-md-5 pull-right">
+						<span id="subTotal" name="subTotal">81,000</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-7">
+						<label for="shipping" class="label">Shipping</label>
+					</div>
+					<div class="col-md-5">
+						<input id="shipping" name="shipping" type="text" class="form-control input-sm" placeholder="0">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-7">
+						<label for="speacialDiscount" class="label">Speacial Discount</label>
+					</div>
+					<div class="col-md-5">
+						<input id="speacialDiscount" name="speacialDiscount" type="text" class="form-control input-sm" placeholder="9,999,999">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-7">
+						<label for="tax" class="label">Tax</label>
+					</div>
+					<div class="col-md-5">
+						<input id="tax" name="tax" type="text" class="form-control input-sm" placeholder="7">% <span id="taxCalculated">555</span></span>
+					</div>
+				</div>
+				<hr>
+				<div class="row total">
+					<div class="col-md-7">
+						<div class="label">Total</div>
+					</div>
+					<div class="col-md-5">
+						<strong><span id="total" class="label">45,000.00</span></strong>
+					</div>
+				</div>
+			</section>
+		</main>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="{% static "assets/js/custom.js" %}"></script>
+	</body>
+</html> 

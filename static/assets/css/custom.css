@@ -1,0 +1,188 @@
+#breadcrumb a{
+	color:#CCCCCC;
+    font-weight: 300;
+}
+#breadcrumb a.current{
+	color:#6C5E73;
+}
+.breadcrumb{
+	background-color: transparent;
+}
+#customerContact{
+    padding: 15px;
+}
+#customerContact .address h2{
+    font-size: 1.5em;
+}
+.contactDetails .dropdown-toggle{
+    width: 100%;
+    border-width: 2px;
+}
+.contactDetails .box{
+    border-left:1px solid rgba(0,0,0,0.1);
+}
+.contactDetails .box:first-child{
+    border-left:none;
+}
+.actions{
+    display: flex;
+    align-items: center ;
+    height: 100px;
+    font-size: 1.1em;
+}
+.actions .item{
+    flex-grow: 1;
+}
+#productDetails div{
+    text-align: left;
+}
+#productDetails .flexBox{
+    display: flex;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#productDetails .head{
+    text-transform: uppercase;
+    font-size: 0.8em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+#productDetails img{
+    width:15px;
+}
+#shippingDetails{
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 10px 10px 10px 16px ;
+    position: static;
+}
+#shippingDetails .row{
+    padding-bottom: 5px;
+}
+#shippingDetails .total{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#shippingDetails .total .label:after{
+    content: "THB";
+    position: relative;
+    left: 85px;
+}
+#shippingDetails #tax{
+    width: 40px;
+    display: inline-block;
+}
+#addProductBySku #searchBySku{
+    margin-bottom: 20px;
+    padding-left: 35px;
+    margin-top: -20px;
+    color: #8899AA;
+    font-size: 1em;
+}
+#addProductBySku .icon{
+    position: relative;
+    top: 17px;
+    left: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    z-index: 9999;
+    background: #FFFFFF no-repeat url(../icons/icon_plus.svg);
+    background-size: 20px 20px;
+    transition: all 0.3s ease;
+}
+#addProductBySku .icon.active{
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+#addProductBySku #searchBySku.active{
+    z-index: 9998;
+    position: relative;
+    overflow: hidden;
+}
+#addProductBySku .overlayScreen{
+    background-color: rgba(0,0,0,0.8);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;        
+    opacity: 0;
+    transition: opacity 0.8s;
+    -webkit-transition: opacity 0.8s/* Safari 3.1 to 6.0 */
+    visibility: hidden;
+}
+#addProductBySku .overlayScreen.active{
+    opacity: 0.8;
+    z-index: 9000;
+    visibility: visible
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    #shippingDetails{
+        position: static;
+        width: 100%;
+    }
+    main{
+        margin: 0;
+        overflow: hidden;
+    }
+    .container{
+        width: 100%;
+        padding: 0;
+    }
+    #customerContact {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    #customerContact .panel{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #customerContact .address{
+        text-align: center;
+        font-size: 1.2em;
+        -moz-box-shadow:    2px 2px 3px 0px #ccc;
+        -webkit-box-shadow: 2px 2px 3px 0px #ccc;
+        box-shadow:         2px 2px 3px 0px #ccc;
+        padding-bottom: 10px;
+    }
+    #customerContact .contactDetails .caret{
+        float: right;
+        position: relative;
+        top: 6px;
+    }
+    #productDetails,
+    #remark{
+        overflow: auto;
+    }
+    #productDetails .flexBox,
+    #remark .panel{
+        width: 1024px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 769px) and (max-width: 1023px){
+
+}
+
+/* Large devices (large desktops, 1024px and up) */
+@media (min-width: 1024px){
+    #shippingDetails{
+        width: 293px;
+        border-radius: 4px;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 14px 0 rgba(0,0,0,0.12);
+        padding: 10px 10px 10px 16px ;
+        position: fixed;
+        bottom:50px;
+        right: 50px;
+        z-index: 9999;
+    }
+}

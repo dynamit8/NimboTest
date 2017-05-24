@@ -1,0 +1,189 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+.heading{
+    color: #000000;
+}
+.label{
+    color: #626272;
+    font-size: inherit;
+    padding: 0;
+    font-weight: initial;
+}
+.panel{
+    border: 1px solid rgba(173,179,185,0.51);
+}
+.padding-10{
+    padding: 10px;
+}
+.container{
+    width: 90%;
+}
+.btn{
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+.btn-default{
+    background-color:transparent;
+    background-image: none;
+}
+.padding-top-10{
+    padding-top: 10px;
+}
+.padding-bottom-10{
+    padding-bottom: 10px;
+}
+.padding-left-10{
+    padding-left: 10px;
+}
+.padding-right-10{
+    padding-right: 10px;
+}
+body{
+    font-family: 'Montserrat' !important;
+    font-size: 12px;
+    background-color: rgba(229,229,229,1);
+    color: #8899AA;
+}
+nav{
+    position: absolute;
+    width: 246px;
+    font-weight: 600;
+    height: 133%;
+    background-color: #702283;
+}
+nav .flexBox{
+    flex-direction: column; /*Column instead of row.*/
+    justify-content: space-between;
+    background-color: #702283;
+    margin-bottom: 0;;
+}
+nav .flexBox li{
+    flex-basis: 0;
+}
+nav ul{
+    padding-left:0;
+}
+nav a{
+    color:#D18EE2;
+}
+nav li{
+    list-style-type: none;
+    padding: 25px 73px 30px 30px;
+}
+nav li.active{
+    background-color: rgba(76,19,103,0.5);
+}
+nav li.active a{
+    color: #FFFFFF;
+}
+nav li.active::before{
+    content: " ";
+    height: 40px;
+    width: 6px;
+    border-radius: 17px;
+    background-color: #65B32E;
+    display: inline-block;
+    position: relative;
+    right: 30px;
+    margin-top: -20px;
+    top: 15px;
+}
+nav li.subMenu::after{
+    content: " ";
+    height: 15px;
+    width: 15px;
+    background: url(../icons/arrow-grey.svg) no-repeat;
+    display: inline-block;
+    position: relative;
+    margin-top: -20px;
+    top: 2px;
+    background-size: 15px 15px;
+    color: #D18EE2;
+}
+nav li.subMenu.companies::after{
+    right: -100px;
+}
+nav li.subMenu.settings::after{
+    right: -116px;
+}
+nav.mini{
+    width: 100%;
+    position: static;
+    padding: 10px;
+    color: #FFFFFF;
+    flex-direction: row;
+    background-color: #702283;
+    display: flex;
+}
+nav.mini .back{
+    background: transparent url(../icons/arrow-grey.svg) no-repeat 0 0;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    width: 15px;
+    height: 15px;
+    background-size: 15px 15px;
+}
+nav.mini .search{
+    background: transparent url(../icons/magnifying-glass.svg) no-repeat 0 0;
+    width: 15px;
+    height: 15px;
+    background-size: 15px 15px;
+}
+
+main{
+    margin-top: 100px;
+    margin-left:300px;
+}
+h1{
+    font-size: 2em;
+}
+h2{
+    font-size: 1.5em;
+}
+hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.flexBox{
+    display: flex;
+}
+.item{
+    flex-basis:100px;
+}
+
+.itemGrow1{
+    flex-grow: 1;
+}
+.itemGrow2{
+    flex-grow: 2;
+}
+.itemGrow3{
+    flex-grow: 3;
+}
+.itemGrow4{
+    flex-grow: 4;
+}
+.itemGrow5{
+    flex-grow: 5;
+}
+.itemGrow6{
+    flex-grow: 6;
+}
+.itemGrow7{
+    flex-grow: 7;
+}
+.itemGrow8{
+    flex-grow: 8;
+}
+.itemGrow9{
+    flex-grow: 9;
+}
+.itemGrow10{
+    flex-grow: 10;
+}
