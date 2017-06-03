@@ -25,7 +25,7 @@ SECRET_KEY = ')gh%8b#6xi_a@x+18k$ahby+mc0peryy60!))_g-0vu1m()*_#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nimbotest.herokuapp.com']
+ALLOWED_HOSTS = ['nimbotest.herokuapp.com','localhost']
 
 
 # Application definition
@@ -124,4 +124,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
